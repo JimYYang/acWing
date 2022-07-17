@@ -23,6 +23,16 @@ int find(int x){
     }
     return r + 1;//将题目给的坐标映射到1...n  从一开始是为了处理前缀和时更加方便
 }
+
+vector<int>::iterator unique(vector<int> & a){
+    for(int i = 0, j = 0; i < a.size(); ++i){
+        if(!i || a[i] != a[i-1]){
+            a[j++] = a[i];
+        }
+    }
+    // a[0]...a[j-1]
+    return a.begin() + j;
+}
 int main(){
     scanf("%d%d", &n, &m);
     for(int i = 0; i < n; ++i){
