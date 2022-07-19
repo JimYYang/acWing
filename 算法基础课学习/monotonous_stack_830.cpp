@@ -31,7 +31,7 @@ int main(){
                                        // 注意改为 <= 后变为左边第一个大于的数
         if(tt) printf("%d ",stk[tt]);
         else printf("-1 ");
-        stk[++tt] = x;
+        stk[++tt] = x; // 输出之后加入栈是因为该次数不可能为答案 
     }
     return 0;
 }
