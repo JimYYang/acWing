@@ -28,3 +28,11 @@ while(~scanf("%d", &x) or while(scanf("%d", &x) != EOF) // 速度快
 
       
 4. 优化cin问题
+[cin cout 优化](https://blog.csdn.net/qq_40430360/article/details/125362584?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-125362584-blog-95493268.pc_relevant_multi_platform_whitelistv1&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-125362584-blog-95493268.pc_relevant_multi_platform_whitelistv1&utm_relevant_index=1)
+①
+使用
+// 关闭输入输出缓存，使效率提升
+ios::sync_with_stdio(false);
+// 解除cin和cout的默认绑定，来降低IO的负担使效率提升
+cin.tie(NULL); cout.tie(NULL);// nullptr 0 NULL 都可以
+使用\n 代替endl
