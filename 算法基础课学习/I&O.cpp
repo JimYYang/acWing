@@ -9,6 +9,8 @@ scanf("%c", &c); // 不会跳过空格
 
 //cin遇空格即停止
 cin >> str; 不读空格
+
+想读入空格
 //对于string类型，可使用
 string str;
 getline(cin,str);
