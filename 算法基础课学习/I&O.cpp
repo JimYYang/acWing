@@ -41,3 +41,7 @@ ios::sync_with_stdio(false);
 // 解除cin和cout的默认绑定，来降低IO的负担使效率提升
 cin.tie(NULL); cout.tie(NULL);// nullptr 0 NULL 都可以
 使用\n 代替endl
+
+5. define 可以定义所有的东西  typedef 可以定义类型
+
+6. 新版的c++ iostream包含了cstdio（scanf printf 需要）
