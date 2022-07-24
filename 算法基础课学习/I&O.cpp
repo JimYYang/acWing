@@ -45,3 +45,12 @@ cin.tie(NULL); cout.tie(NULL);// nullptr 0 NULL 都可以
 5. define 可以定义所有的东西  typedef 可以定义类型
 
 6. 新版的c++ iostream包含了cstdio（scanf printf 需要）
+
+7. string 用c风格的输入输出问题
+//输出需要用到c_str()函数  读取需要先分配空间
+string a;
+	a.resize(100); //需要预先分配空间
+	scanf("%s", &a[0]);
+	puts(a.c_str());
+	return 0;
+
