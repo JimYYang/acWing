@@ -24,7 +24,7 @@ int find(int x)// 如果存在 返回存储的位置  如果不存在  返回应
 
 int main()
 {
-    memset(h, 0x3f, sizeof(h)); // memset是按照位来赋值的  int为4个字节 0x为16进制  3f八位 一个字节  将四个字节赋值为3f
+    memset(h, 0x3f, sizeof(h)); // memset是按照位来赋值的  int为4个字节 0x为16进制  3f八位 一个字节  将四个字节赋值为3f  一般初始化为最大整数也是这个数
     int n;
     scanf("%d", &n);
     char op[2];
