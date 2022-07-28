@@ -1,8 +1,5 @@
 // 思想是dp  dp三个参数表示状态  第一个状态不需要  所以是三重循环
 
-
-
-// 重边取小的 自环如果是正的没有影响  负的相当于负环问题
 #include <iostream>
 #include <algorithm>
 #include <cstring>
@@ -29,7 +26,7 @@ void floyd(){
 int main(){
     scanf("%d%d%d", &n, &m, &q);
     
-    // memset(d, 0x3f, sizeof d);  // 大部分时候不需要初始化为0 
+    // memset(d, 0x3f, sizeof d);  // 大部分时候不需要初始化为0   但是这题会询问 2 2 这种情况 所以有这种情况时需要用下面的初始化
     
     for(int i = 1; i <= n; i ++){
         for(int j = 1; j <= n; j ++){
