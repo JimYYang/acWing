@@ -46,7 +46,7 @@ int dijkstra(){
         
         used[node] = true;
         
-        for(int i = h[node]; i != -1; i = ne[i] ){// 遍历所有边  最多进行m次操作  所以队列里最多有m对
+        for(int i = h[node]; i != -1; i = ne[i] ){// 遍历所有边  最多进行m次操作  所以队列里最多有m对  稀疏图遍历的是所有出边
             int j = e[i];
             
             if(d[j] > distance + w[i]){
