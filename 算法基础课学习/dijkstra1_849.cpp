@@ -3,7 +3,7 @@
 
 
 // dijkstra1  迭代n次 每次更新一个距离 
-
+// 稠密图(m = n^2)用邻接矩阵来存储
 #include <iostream>
 #include <algorithm>
 #include <cstring>
