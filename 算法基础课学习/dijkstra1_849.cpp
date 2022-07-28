@@ -18,7 +18,7 @@ int g[N][N], dist[N];
 
 bool used[N];
 
-// 注意这里节点编号大多从0 开始
+// 注意这里节点编号大多从1 开始
 
 int dijkstra(){
     memset(dist, 0x3f, sizeof dist);
@@ -34,7 +34,7 @@ int dijkstra(){
         if (t == n)break;
         used[t] = true;
         
-        for(int j = 1; j <= n; j ++){
+        for(int j = 1; j <= n; j ++){ // 其实是遍历所有的边
             dist[j] = min(dist[j], dist[t] + g[t][j]);
         }
     }
