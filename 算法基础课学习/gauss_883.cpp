@@ -11,10 +11,10 @@ using namespace std;
 typedef long long LL;
 
 const int N = 110;
-const double eps = 1e-6;
+const double eps = 1e-6;  // 这里很容易写成int
 
 int n;
-double a[N][N];
+double a[N][N]; // 这里很容易写成int
 
 int gauss(){
     int col, row;
@@ -36,7 +36,7 @@ int gauss(){
         for(int i = row + 1; i < n; i ++){
             if(fabs(a[i][col]) > eps){
                 for(int j = n; j >= col; j --){
-                    a[i][j] -= a[row][j] * a[i][col]; // a[i][col]是倍数 固定不变 倒序来做也是防止a[i][col]这个倍数被改变
+                    a[i][j] -= a[row][j] * a[i][col]; // a[i][col]是倍数 固定不变 倒序来做也是防止a[i][col]这个倍数被改变 i ,j 与 row, col互换的方法来记
                 }
             }
         }
@@ -65,7 +65,7 @@ int main(){
     
     for(int i = 0; i < n; i ++){
         for(int j = 0; j < n + 1; j ++){
-            scanf("%lf", &a[i][j]);
+            scanf("%lf", &a[i][j]); // 这里很容易写成%d
         }
     }
     
@@ -74,7 +74,7 @@ int main(){
     if(! ans){
         for(int i = 0; i < n; i ++)
             if(fabs(a[i][n]) < eps)printf("0.00\n");
-            else    printf("%.2lf\n", a[i][n]);
+            else    printf("%.2lf\n", a[i][n]); // 这里很容易写成%d
     }
     
     else if (ans == 1)puts("Infinite group solutions");
