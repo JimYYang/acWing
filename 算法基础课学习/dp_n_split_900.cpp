@@ -26,3 +26,35 @@ int main(){
     
     return 0;
 }
+
+
+
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+
+using namespace std;
+
+const int N = 1010, MOD = 1e9 + 7;
+
+int dp[N][N];
+int main(){
+    int n;
+    scanf("%d", &n);
+    
+    // 所有简单情况初始值都为0  已经在定义全局变量的时候初始化
+    dp[0][0] = 1; // 这个必须加上  方案问题全不选为一种方案
+    for(int i = 1; i <= n; i ++){
+        for(int j = 1; j <= i; j ++){
+            dp[i][j] = (dp[i - 1][j - 1] + dp[i - j][j]) % MOD;
+        }
+    }
+    
+    int res = 0;
+    
+    for(int i = 1; i <= n; i ++)res = (res + dp[n][i]) % MOD;
+    
+    printf("%d", res);
+    
+    return 0;
+}
