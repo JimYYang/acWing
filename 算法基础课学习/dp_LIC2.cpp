@@ -90,3 +90,97 @@ int main(){
     
 //     return 0;
 // }
+
+
+
+// #include <iostream>
+// #include <algorithm>
+// #include <cstring>
+
+// using namespace std;
+
+// const int N = 100010;
+
+// int q[N];
+// int n, res;
+
+
+// 二分查找的边界有时候也会影响结果
+
+// int main(){
+//     scanf("%d", &n);
+    
+//     int x, l, r;
+//     while(n --) {
+//         scanf("%d", &x);
+        
+//         l = 1, r = res;
+        
+//         while(l <= r){
+//             int mid = l + r  >> 1;
+            
+//             if(q[mid] >= x) r = mid - 1;
+//             else l = mid + 1; 
+//         }
+//         // cout << r << endl;
+//         // if(r == -1){
+//         //     q[1] = x;
+//         //     res = max(res, 1);
+//         // }
+//         // else {res = max(res, r + 1);
+//         // q[r + 1] = x;
+//         // }
+//         res = max(res, r + 1);
+//         q[r + 1] = x;
+//     }
+    
+//     cout << res ;
+    
+//     return 0;
+// }
+
+
+
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+
+using namespace std;
+
+const int N = 100010;
+
+int q[N];
+int n, res;
+
+
+int main(){
+    scanf("%d", &n);
+    
+    int x, l, r;
+    while(n --) {
+        scanf("%d", &x);
+        
+        l = 0, r = res; // 长度为0的最小数设为-INF，
+        
+        while(l < r){
+            int mid = l + r + 1 >> 1;
+            
+            if(q[mid] < x) l = mid;
+            else r = mid - 1; 
+        }
+        // cout << r << endl;
+        // if(r == -1){
+        //     q[1] = x;
+        //     res = max(res, 1);
+        // }
+        // else {res = max(res, r + 1);
+        // q[r + 1] = x;
+        // }
+        res = max(res, r + 1);
+        q[r + 1] = x;
+    }
+    
+    cout << res ;
+    
+    return 0;
+}
