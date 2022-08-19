@@ -35,9 +35,9 @@ int main(){
         
         // memset(dp, 0, sizeof dp); // 多组数据每次数据都要重新初始化 memset不如下面高效
         
-        for (int i = 0; i <= n; i ++ )
-            for (int j = 0; j <= m; j ++ )
-                dp[i][j] = 0;
+        // for (int i = 0; i <= n; i ++ ) // 初始化不是必须的  每次都是从小到大遍历 会被覆盖
+        //     for (int j = 0; j <= m; j ++ )
+        //         dp[i][j] = 0; 
         
         for(int i = 1; i <= n; i ++)dp[i][1] = g[i][1] + dp[i - 1][1];
         for(int i = 1; i <= m; i ++)dp[1][i] = g[1][i] + dp[1][i - 1]; // 给予适当的初始化 便于理解 这题不初始化也能过
